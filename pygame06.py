@@ -8,7 +8,7 @@ SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 480
 SCREEN_SIZE = (SCREEN_WIDTH, SCREEN_HEIGHT)
 
-player = pygame.image.load("resources/images/dude,png")
+player = pygame.image.load("resources/images/dude.png")
 grass = pygame.image.load("resources/images/grass.png")
 castle = pygame.image.load("resources/images/castle.png")
 
@@ -23,12 +23,12 @@ while True:
 
     #배경색 이미지 그리기
     for bx in range(SCREEN_WIDTH // grass.get_width()+1):
-        for by in (SCREEN_HEIGHT // grass.get_height()+1):
-            screen.blit(grassm, bx * grass.get_width(), by* grass.get_height())
+        for by in range(SCREEN_HEIGHT // grass.get_height()+1):
+            screen.blit(grass, (bx * grass.get_width(), by* grass.get_height()))
 
     #캐슬 그리기
-    for cy in range(SCREEN_HEIGHT // castle.gety_height()):
-        screen.blit(castle, (0,30+cy*castle.gety_height()))
+    for cy in range(SCREEN_HEIGHT // castle.get_height()):
+        screen.blit(castle, (0,30+cy*castle.get_height()))
 
     #토끼 그릭
     screen.blit(player, player_pos)
