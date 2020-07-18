@@ -42,6 +42,10 @@ s_pos = (COL_COUNT//2, ROW_COUNT//2)
 bodies = [s_pos]
 
 # 먹이 생성 함수
+def draw_grid(g_x, g_y, color = WHITE, bovder = 0):
+    one_rect = (g_x * CELL_SIZE, g_y * CELL_SIZE, CELL_SIZE, CELL_SIZE)
+    pygame.draw.rect(screen, color, one_rect, bovder)
+
 def add_food():
     while True:
         c_idx = random.randint(0, COL_COUNT-1)
@@ -102,16 +106,13 @@ while True:
 
     for c_idx in range(COL_COUNT):
         for r_idx in range(ROW_COUNT):
-            one_rect = (c_idx*CELL_SIZE, r_idx*CELL_SIZE, CELL_SIZE, CELL_SIZE)
-            pygame.draw.rect(screen, GRAY, one_rect, 1)
+            draw_grid(c_idx, r_idx, GRAY, 1)
 
     for food in foods:
-        one_rect = (food[0]*CELL_SIZE, food[1]*CELL_SIZE, CELL_SIZE, CELL_SIZE)
-        pygame.draw.rect(screen, GREEN, one_rect)
+        draw_grid(food[0], food[1], GREEN)
 
     for body in bodies:
-        one_rect = (body[0]*CELL_SIZE, body[1]*CELL_SIZE, CELL_SIZE, CELL_SIZE)
-        pygame.draw.rect(screen, BLUE, one_rect)
+        draw_grid(body[0], body[1], BLUE)
 
     #점수 출력
     score_img = score_font.render(f"SCORE: {score}", True, YELLOW)
