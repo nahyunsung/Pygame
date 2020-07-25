@@ -26,12 +26,12 @@ YELLOW = (255, 255, 0)
 CELL_SIZE = 40
 COL_COUNT = SCREEN_WIDTH//CELL_SIZE
 ROW_COUNT = SCREEN_HEIGHT//CELL_SIZE
+direction = DOWN
 
 LEFT = 0
 RIGHT = 1
 UP = 2
 DOWN = 3
-direction = DOWN
 #점수
 score = 0
 
