@@ -26,6 +26,15 @@ while True:
     # 노란색 30 160 100 50 직사각형 (R+G = Y)
     pygame.draw.rect(screen, (255, 255, 0), (30, 160, 100, 50))
 
+    # 파란선 (100, 100), (200, 200)
+    pygame.draw.line(screen, (0, 0, 255), (100, 100), (200, 200))
+
+    # 빨간선 세로 80 가로 100~200 사이의 수편선
+    pygame.draw.line(screen, (255, 0, 0 ), (10, 80), (200, 80))
+
+    # 녹색  가로 250 화면 분활 수직선 그리기
+    pygame.draw.line(screen, (0, 255, 0), (250,0), (250, 300))
+
     # 화면 업데이트
     pygame.display.update()
 
